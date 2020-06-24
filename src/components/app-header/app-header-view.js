@@ -1,7 +1,7 @@
 import React from 'react';
 import './app-header.css';
 
-export default function AppHeader({ label, doneCount, todoCount }) {
+export default React.memo(function AppHeader({ label, doneCount, todoCount }) {
   return (
     <header className="d-flex app-header">
       <h1 className="app-header__label">{label}</h1>
@@ -10,4 +10,4 @@ export default function AppHeader({ label, doneCount, todoCount }) {
       </h2>
     </header>
   );
-}
+});

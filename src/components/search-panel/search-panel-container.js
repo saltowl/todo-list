@@ -1,7 +1,7 @@
 import React from 'react';
 import SearchPanel from './search-panel-view';
 
-export default class SearchPanelContainer extends React.Component {
+export default class SearchPanelContainer extends React.PureComponent {
   state = {
     value: '',
   };

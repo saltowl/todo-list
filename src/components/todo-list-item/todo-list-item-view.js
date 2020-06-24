@@ -1,7 +1,7 @@
 import React from 'react';
 import './todo-list-item.css';
 
-export default function TodoListItem({
+export default React.memo(function TodoListItem({
   id,
   label,
   important,
@@ -37,4 +37,4 @@ export default function TodoListItem({
       </button>
     </span>
   );
-}
+});

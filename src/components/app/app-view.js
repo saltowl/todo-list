@@ -8,7 +8,7 @@ import ItemStatusFilter from '../item-status-filter';
 import TodoList from '../todo-list';
 import AddItemForm from '../add-item-form';
 
-export default function App({
+export default React.memo(function App({
   todos,
   filteredTodos,
   addItem,
@@ -30,4 +30,4 @@ export default function App({
       <AddItemForm onItemAdded={addItem} />
     </div>
   );
-}
+});

@@ -2,7 +2,7 @@ import React from 'react';
 import App from './app-view';
 import uniqid from 'uniqid';
 
-export default class AppContainer extends React.Component {
+export default class AppContainer extends React.PureComponent {
   state = {
     filter: '',
     searchValue: '',

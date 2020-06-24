@@ -1,7 +1,7 @@
 import React from 'react';
 import ItemStatusFilter from './item-status-filter-view';
 
-export default class ItemStatusFilterContainer extends React.Component {
+export default class ItemStatusFilterContainer extends React.PureComponent {
   buttons = [
     { label: 'All', filter: 'all' },
     { label: 'Active', filter: 'active' },

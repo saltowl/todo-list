@@ -1,7 +1,11 @@
 import React from 'react';
 import './search-panel.css';
 
-export default function SearchPanel({ placeholder = 'type to search', onChange, value }) {
+export default React.memo(function SearchPanel({
+  placeholder = 'type to search',
+  onChange,
+  value,
+}) {
   return (
     <input
       type="text"
@@ -11,4 +15,4 @@ export default function SearchPanel({ placeholder = 'type to search', onChange, 
       onChange={onChange}
     />
   );
-}
+});

@@ -1,7 +1,7 @@
 import React from 'react';
 import AddItemForm from './add-item-form-view';
 
-export default class AddItemFormContainer extends React.Component {
+export default class AddItemFormContainer extends React.PureComponent {
   state = {
     label: '',
   };

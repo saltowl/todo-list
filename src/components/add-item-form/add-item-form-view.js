@@ -1,7 +1,7 @@
 import React from 'react';
 import './add-item-form.css';
 
-export default function AddItemForm({ label, onLabelChange, onSubmit }) {
+export default React.memo(function AddItemForm({ label, onLabelChange, onSubmit }) {
   return (
     <form className="add-item-form d-flex" onSubmit={onSubmit}>
       <input
@@ -14,4 +14,4 @@ export default function AddItemForm({ label, onLabelChange, onSubmit }) {
       <button className="btn btn-outline-secondary">Add Item</button>
     </form>
   );
-}
+});
