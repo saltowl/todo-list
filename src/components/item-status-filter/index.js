@@ -1,1 +1,1 @@
-export { default } from './item-status-filter-view';
+export { default } from './item-status-filter-container';

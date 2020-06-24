@@ -6,23 +6,28 @@ import AppHeader from '../app-header';
 import SearchPanel from '../search-panel';
 import ItemStatusFilter from '../item-status-filter';
 import TodoList from '../todo-list';
+import AddItemForm from '../add-item-form';
 
-export default function App() {
-  const todos = [
-    { label: 'ToDo1', id: 0, done: false },
-    { label: 'ToDo2', important: true, id: 1, done: true },
-  ];
-  const doneCount = todos.filter((todo) => todo.done).length;
+export default function App({
+  todos,
+  filteredTodos,
+  addItem,
+  deleteItem,
+  filterTodos,
+  handleSearch,
+}) {
+  const doneCount = todos.filter(({ done }) => done).length;
   const todoCount = todos.length - doneCount;
 
   return (
     <div className="app">
       <AppHeader doneCount={doneCount} todoCount={todoCount} label={'Todo List'} />
       <div className="tools d-flex">
-        <SearchPanel />
-        <ItemStatusFilter />
+        <SearchPanel onChange={handleSearch} />
+        <ItemStatusFilter filterTodos={filterTodos} />
       </div>
-      <TodoList todos={todos} />
+      <TodoList todos={filteredTodos} onItemDeleted={deleteItem} />
+      <AddItemForm onItemAdded={addItem} />
     </div>
   );
 }

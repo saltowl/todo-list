@@ -1,11 +1,14 @@
 import React from 'react';
 
-export default function ItemStatusFilter() {
-  return (
-    <div className="bt-group">
-      <button className="btn btn-info">All</button>
-      <button className="btn btn-outline-secondary">Active</button>
-      <button className="btn btn-outline-secondary">Done</button>
-    </div>
-  );
+export default function ItemStatusFilter({ filterTodos, buttons, active }) {
+  const buttonsGroup = buttons.map(({ label, filter }, i) => (
+    <button
+      className={`btn ${active === i ? 'btn-info' : 'btn-outline-secondary'}`}
+      onClick={() => filterTodos(filter)}
+    >
+      {label}
+    </button>
+  ));
+
+  return <div className="bt-group">{buttonsGroup}</div>;
 }

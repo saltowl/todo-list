@@ -1,1 +1,1 @@
-export { default } from './todo-list-item-view';
+export { default } from './todo-list-item-redux';
