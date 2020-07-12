@@ -17,3 +17,11 @@ export const toggleTodoProperty = (id, prop) => ({
     prop,
   },
 });
+
+export const insertTodoBefore = (current, next) => ({
+  type: constants.INSERT_TODO_BEFORE,
+  payload: {
+    current,
+    next,
+  },
+});

@@ -30,6 +30,31 @@ const todoListReducer = (state = constants.INITIAL_STATE.todos, action = {}) => 
       };
     }
 
+    case constants.INSERT_TODO_BEFORE: {
+      const { current, next } = action.payload;
+      const { list } = state;
+      const from = list.findIndex((item) => item.id === current);
+      const to = list.findIndex((item) => item.id === next);
+      const newList =
+        from < to
+          ? [
+              ...list.slice(0, from),
+              ...list.slice(from + 1, to),
+              list[from],
+              ...list.slice(to),
+            ]
+          : [
+              ...list.slice(0, to),
+              list[from],
+              ...list.slice(to, from),
+              ...list.slice(from + 1),
+            ];
+      return {
+        ...state,
+        list: newList,
+      };
+    }
+
     default: {
       return {
         ...state,

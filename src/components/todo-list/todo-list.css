@@ -1,0 +1,12 @@
+.list-group-item {
+  padding: 0.5rem;
+  cursor: move;
+  margin: 0.3rem;
+  border-width: 1px !important;
+}
+
+.selected {
+  background: rgba(0, 0, 0, 0.125);
+  opacity: 0.6;
+  border: 2px dashed #17a2b8 !important;
+}
